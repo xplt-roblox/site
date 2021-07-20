@@ -3,8 +3,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="ROBOTS" content="NOINDEX, FOLLOW" />
-	<title>Login / GameSense</title>
+	<meta name="ROBOTS" content="NOINDEX, FOLLOW" />
+	<title>Register / XPLT</title>
 	<link rel="stylesheet" type="text/css" href="Cobalt.min.css?v=31" />
 	<link rel="stylesheet" type="text/css" href="font-awesome.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Raleway:900,400" rel="stylesheet" type="text/css" />
@@ -15,8 +15,12 @@
 function process_form(the_form)
 {
 	var required_fields = {
-		"req_username": "Username",
-		"req_password": "Password"
+		"req_invite_code": "Invitation code",
+		"req_user": "Username",
+		"req_password1": "Password",
+		"req_password2": "Confirm password",
+		"req_email1": "Email",
+		"req_email2": "Email 2"
 	};
 	if (document.all || document.getElementById)
 	{
@@ -35,11 +39,12 @@ function process_form(the_form)
 }
 /* ]]> */
 </script>
+<script type="text/javascript">$(function() { document.getElementById("time_zone").value = ((0 - new Date().getTimezoneOffset()) / 60).toString(); });</script>
 </head>
 
-<body onload="document.getElementById('login').elements['req_username'].focus()">
+<body onload="document.getElementById('register').elements['req_user'].focus()">
 
-<div id="punlogin" class="pun">
+<div id="punregister" class="pun">
 <div class="top-box"></div>
 <div class="punwrap">
 
@@ -74,39 +79,35 @@ function process_form(the_form)
 
 
 <div id="brdmain">
-<div class="blockform">
+<div id="regform" class="blockform">
 	<h2><span>Login</span></h2>
 	<div class="box">
-		<form id="login" method="post" action="login.php?action=in" onsubmit="return process_form(this)">
+		<form id="register" method="post" action="register.php?action=register" onsubmit="this.register.disabled=true;if(process_form(this)){return true;}else{this.register.disabled=false;return false;}">
 			<div class="inform">
 				<fieldset>
 					<legend>Enter your username and password below</legend>
 					<div class="infldset">
 						<input type="hidden" name="form_sent" value="1" />
-						<input type="hidden" name="redirect_url" value="https://gamesense.pub/forums/index.php" />
-						<input type="hidden" name="csrf_token" value="f2d091a9f23533af97c42e7156a48194efdfa494" />
 						<label class="conl required"><strong>Username <span>(Required)</span></strong><br /><input type="text" name="req_username" value="" size="25" maxlength="25" tabindex="1" /><br /></label>
 						<label class="conl required"><strong>Password <span>(Required)</span></strong><br /><input type="password" name="req_password" size="25" tabindex="2" /><br /></label>
 
 						<p class="clearb">If you have not registered or have forgotten your password click on the appropriate link below.</p>
-						<p class="actions"><span><a href="register.html" tabindex="5">Not registered yet?</p>
+						<a href="register.html" tabindex="5">Not registered yet?</a>
 					</div>
 				</fieldset>
 			</div>
-		
-			<input type="button" onclick="onClickLogin()" value="Login">
+			<input type="button" value="Login" onclick="onClickRegister()">
 		</form>
 	</div>
 </div>
 </div>
-<script language="JavaScript">
+<script>
 	
-	function onClickLogin()
-	{
-		alert("Wrong Username or Password");
-	}
+function onClickRegister(){
+	alert("Wrong Username or Password");
+}
 
-</script> 
+</script>
 <div id="brdfooter" class="block">
 	<div class="box">
 		<div class="inbox">
