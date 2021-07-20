@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> XPLT / Get Key </title>
+</head>
+<script language="JavaScript">
+
+	function generatePassword() 
+	{
+	    var length = 32,
+	        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+	        retVal = "";
+	    for (var i = 0, n = charset.length; i < length; ++i) {
+	        retVal += charset.charAt(Math.floor(Math.random() * n));
+	    }
+		document.write(retVal);
+	}
+	function firstStep()
+	{
+		window.open("https://oxy.st/d/IEae", "_blank");
+	}
+
+	function onClickButton()
+	{	
+		firstStep();
+		setTimeout('generatePassword()',15000);
+	}
+</script>
+<style type="text/css">
+	.font{
+		font-family: Verdana;
+		font-size: 16px;
+	}
+</style>
+<style> 
+button
+{
+	display: table;
+	margin: 0 auto
+}
+</style>
+<br><br><br><br><br><br><br><br><br><br>
+<body >
+	<p align="center" class="font"> Before using XPLT you need download key! 
+	</p>
+	<button class="font" onclick="onClickButton()">
+		Download Key
+	</button>
+<br><br><br><br><br>
+	<a href="https://discord.gg/a5y9fMRc3g" target="_blank" class="font"> <p align="center"> Discord Server</p> </a>
+</body>
+</html>
